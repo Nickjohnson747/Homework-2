@@ -16,7 +16,7 @@ a. [’a’,’b’,’c’]: a -> [a]
 
 - (’a’,’b’,’c’): a -> (a)
 
-- [(False,’0’),(True,’1’)]: (a,b) -> [a,b]
+- [(False,’0’),(True,’1’)]: (a,b) -> [(a,b)]
 
 - ([False,True],[’0’,’1’]): (a,a) -> [a,a]
 
@@ -25,16 +25,23 @@ a. [’a’,’b’,’c’]: a -> [a]
 
 
 # What are the types of the following functions?
-a. second xs     = head (tail xs)
-- swap (x,y)    = (y,x)
+a. second xs     = head (tail xs)\
+[a] -> [a]
 
-- pair x y      = (x,y)
+- swap (x,y)    = (y,x) \
+(a) -> (a)
 
-- double x      = x*2
+- pair x y      = (x,y) \
+a -> (a)
 
-- palindrome xs = reverse xs == xs
+- double x      = x*2 \
+Int -> Int
 
-- twice f x     = f (f x)
+- palindrome xs = reverse xs == xs \
+a -> a
+
+- twice f x     = f (f x)\
+Int -> Int
 \
 
 # Types and Typeclasses
@@ -52,7 +59,7 @@ what the functions do.
   
 - Define a function `f` as follows:
 ``` haskell
-f x = toRational $ rem x 5
+f x = toRational $ rem x 5 
 ```
   i. What is `f`'s type?
    
