@@ -72,15 +72,25 @@ f x = toRational $ rem x 5
 
 a. Redefine the following version of (&&) using _conditionals_ rather than patterns:
 ``` haskell
-  True && True = True
-  _    && _    = False
+  True && b = b
+  False && _    = False
 ```
 
 - Give three possible definitions for the logical or operator (`||`)
    using pattern matching.
+``` haskell
+   True || False = True
+   True || True = True
+   False || False = False
+```
 
 - What does the `init` function in Prelude[^prelude] do? Define `init` in
-  terms of functions `length` and `take`.
+  terms of functions `length` and `take`. \
+  
+  Init takes a list as an input and returns all elements of the list except for the last element.
+  
+  Init takes a list of length x and preforms the 'take' function on elements 0:'length'(x-1)
+  
   
 
 [^prelude]: Prelude is a standard module loaded by default when you start `ghci`. Information about Prelude can be found on the [Prelude Hackage page](https://hackage.haskell.org/package/base-4.9.0.0/docs/Prelude.html).
