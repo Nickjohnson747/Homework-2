@@ -26,22 +26,22 @@ a. [’a’,’b’,’c’]: a -> [a]
 
 # What are the types of the following functions?
 a. second xs     = head (tail xs)\
-[a] -> [a]
+[a] -> a
 
 - swap (x,y)    = (y,x) \
-(a) -> (a)
+(t~1~, t) -> (t, t~1~)
 
 - pair x y      = (x,y) \
-a -> (a)
+t -> t~1~ -> (t, t~1~)
 
 - double x      = x*2 \
 Int -> Int
 
 - palindrome xs = reverse xs == xs \
-a -> a
+Eq a => [a] -> Bool
 
 - twice f x     = f (f x)\
-Int -> Int
+(t -> t) -> t -> t
 \
 
 # Types and Typeclasses
@@ -61,9 +61,11 @@ what the functions do.
 ``` haskell
 f x = toRational $ rem x 5 
 ```
-  i. What is `f`'s type?
+  i. What is `f`'s type? \
+  f :: Integral a => a -> Rational
    
-  - Describe how would your Haskell compiler/interpreter infer `f`'s type.
+  - Describe how would your Haskell compiler/interpreter infer `f`'s type.\
+  
 \
 
 # Functions
