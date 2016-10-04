@@ -18,9 +18,9 @@ a. [’a’,’b’,’c’]: a -> [a]
 
 - [(False,’0’),(True,’1’)]: (a,b) -> [(a,b)]
 
-- ([False,True],[’0’,’1’]): (a,a) -> [a,a]
+- ([False,True],[’0’,’1’]): [a] -> ([a])
 
-- [tail,init,reverse]: [a] -> [a]
+- [tail,init,reverse]: [[a] -> [a]]
 
 
 
