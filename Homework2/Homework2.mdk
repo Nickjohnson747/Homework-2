@@ -12,37 +12,39 @@ Doc class     : [11pt]article
 [TITLE]
 
 # What are the types of the following values?
+```haskell
 a. [’a’,’b’,’c’]: a -> [a]
 
-- (’a’,’b’,’c’): a -> (a)
+b. (’a’,’b’,’c’): a -> (a)
 
-- [(False,’0’),(True,’1’)]: (a,b) -> [(a,b)]
+c. [(False,’0’),(True,’1’)]: (a,b) -> [(a,b)]
 
-- ([False,True],[’0’,’1’]): [a] -> ([a])
+d. ([False,True],[’0’,’1’]): [a] -> ([a])
 
-- [tail,init,reverse]: [[a] -> [a]]
-
+e. [tail,init,reverse]: [[a] -> [a]]
+```
 
 
 # What are the types of the following functions?
-a. second xs     = head (tail xs)\
-[a] -> a
+```haskell
+a. second xs = head (tail xs)
+second :: [a] -> a
 
-- swap (x,y)    = (y,x) \
-(t~1~, t) -> (t, t~1~)
+b. swap (x,y) = (y,x) 
+swap :: (t1, t) -> (t, t1)
 
-- pair x y      = (x,y) \
-t -> t~1~ -> (t, t~1~)
+c. pair x y = (x,y) 
+pair :: t -> t1 -> (t, t1)
 
-- double x      = x*2 \
-Int -> Int
+d. double x = x*2 
+double:: Int -> Int
 
-- palindrome xs = reverse xs == xs \
-Eq a => [a] -> Bool
+e. palindrome xs = reverse xs == xs
+palindrome :: Eq a => [a] -> Bool
 
-- twice f x     = f (f x)\
-(t -> t) -> t -> t
-\
+f. twice f x = f (f x)
+twice:: (t -> t) -> t -> t
+```
 
 # Types and Typeclasses
 
@@ -51,7 +53,9 @@ respectively? Read the documentation (find them either
 through [Hayoo](http://hayoo.fh-wedel.de)
 or [Hoogle](https://www.haskell.org/hoogle/)) of these functions and try
 invoking each of them in `ghci`. Show your trials and explain in English
-what the functions do.
+what the functions do.\
+\
+    
 
 - What are the example types that are instances of `Real` and `Integral`,
   respectively. Try invoking the `Real` and `Integral` functions on
@@ -62,10 +66,12 @@ what the functions do.
 f x = toRational $ rem x 5 
 ```
   i. What is `f`'s type? \
+``` haskell
   f :: Integral a => a -> Rational
+```
    
   - Describe how would your Haskell compiler/interpreter infer `f`'s type.\
-  
+  The compiler understands that a must be of the Integral typeclass in order to preform the 'toRational' function
 \
 
 # Functions
@@ -87,9 +93,9 @@ a. Redefine the following version of (&&) using _conditionals_ rather than patte
 - What does the `init` function in Prelude[^prelude] do? Define `init` in
   terms of functions `length` and `take`. \
   
-  Init takes a list as an input and returns all elements of the list except for the last element.
+  1)Init takes a list as an input and returns all elements of the list except for the last element.
   
-  Init takes a list of length x and preforms the 'take' function on elements 0:'length'(x-1)
+  2)Init takes a list of length x and preforms the 'take' function on elements 0:'length'(x-1)
   
   
 
