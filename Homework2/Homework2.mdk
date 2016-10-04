@@ -13,15 +13,15 @@ Doc class     : [11pt]article
 
 # What are the types of the following values?
 ```haskell
-a. [’a’,’b’,’c’]: a -> [a]
+a. [’a’,’b’,’c’] :: [char, char, char]
 
-b. (’a’,’b’,’c’): a -> (a)
+b. (’a’,’b’,’c’) :: (char, char, char)
 
-c. [(False,’0’),(True,’1’)]: (a,b) -> [(a,b)]
+c. [(False,’0’),(True,’1’)] :: [(Bool, char)]
 
-d. ([False,True],[’0’,’1’]): [a] -> ([a])
+d. ([False,True],[’0’,’1’]) :: ([Bool, Char])
 
-e. [tail,init,reverse]: [[a] -> [a]]
+e. [tail,init,reverse] :: [[a] -> [a]]
 ```
 
 
@@ -54,12 +54,18 @@ through [Hayoo](http://hayoo.fh-wedel.de)
 or [Hoogle](https://www.haskell.org/hoogle/)) of these functions and try
 invoking each of them in `ghci`. Show your trials and explain in English
 what the functions do.\
-\
-    
+
+ i. toRational defines typeclass 'Real'
+    - Invocation: :info Real
+ - Integral defined by: quot, rem, div, mod, quotRem, divMod, toInteger
+    - Invocation: :info Integreal
 
 - What are the example types that are instances of `Real` and `Integral`,
   respectively. Try invoking the `Real` and `Integral` functions on
   values of the example types that you give.
+  
+  i. Num, Ord
+  - Integer, word, Int
   
 - Define a function `f` as follows:
 ``` haskell
@@ -71,7 +77,7 @@ f x = toRational $ rem x 5
 ```
    
   - Describe how would your Haskell compiler/interpreter infer `f`'s type.\
-  The compiler understands that a must be of the Integral typeclass in order to preform the 'toRational' function
+    - The compiler understands that 'a' must be of the Real typeclass in order to preform the 'toRational' function and it also knows all predefined functions from the ghci library
 \
 
 # Functions
