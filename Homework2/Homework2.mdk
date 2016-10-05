@@ -94,6 +94,15 @@ what the functions do.\
        Prelude> quotRem 22 8
        Prelude> (2,6)
       ```
+      - ``` haskell
+        divMod returns a tuple containing the result of division and modulo
+        divMod :: a -> a -> (a,a)
+        Prelude> divMod 3 5
+        Prelude> (0,3)
+        ```
+      - ``` haskell
+       toInteger converts Integrals into Integers
+        ```
 - What are the example types that are instances of `Real` and `Integral`,
   respectively. Try invoking the `Real` and `Integral` functions on
   values of the example types that you give.
@@ -117,8 +126,12 @@ f x = toRational $ rem x 5
 
 a. Redefine the following version of (&&) using _conditionals_ rather than patterns:
 ``` haskell
-  True && b = b
-  False && _    = False
+  True && True = True
+  _ && _ = False
+  
+  && :: Bool -> Bool -> Bool
+  && x y = if x == False then False else 
+            if y == False then False else True 
 ```
 
 - Give three possible definitions for the logical or operator (`||`)
