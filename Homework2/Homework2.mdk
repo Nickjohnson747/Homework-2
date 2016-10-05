@@ -56,16 +56,34 @@ invoking each of them in `ghci`. Show your trials and explain in English
 what the functions do.\
 
  i. toRational defines typeclass 'Real'
-    - Invocation: :info Real
+    - Invocation:
+        - ```haskell
+        toRational :: a -> Rational
+        Prelude> toRational 55/4
+        Prelude> 55 % 4
+          ```
  - Integral defined by: quot, rem, div, mod, quotRem, divMod, toInteger
-    - Invocation: :info Integreal
-
+    - Invocations:
+      - ```haskell
+      quot :: a -> a -> a
+      Prelude> 33 quot 12
+      Prelude> 2
+        ```
+      - ```haskell
+       rem :: a -> a -> a
+       Prelude> 3 rem 12
+       Prelude> 3
+        ``` 
+      - ``` haskell
+      div :: a -> a -> a
+      Prelude> 6 div 2
+      Prelude> 3
+        ```
 - What are the example types that are instances of `Real` and `Integral`,
   respectively. Try invoking the `Real` and `Integral` functions on
   values of the example types that you give.
   
-  i. Num, Ord
-  - Integer, word, Int
+  - Integer and Int types
   
 - Define a function `f` as follows:
 ``` haskell
