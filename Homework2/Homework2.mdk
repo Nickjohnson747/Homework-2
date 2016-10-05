@@ -71,13 +71,15 @@ what the functions do.\
       Prelude> 2
         ```
       - ```haskell
-      rem returns the remainder of the integer division preformed on the two input numbers
+      rem returns the remainder of the integer division preformed on the 
+      two input numbers
        rem :: a -> a -> a
        Prelude> 3 rem 12
        Prelude> 3
         ``` 
       - ``` haskell
-      div returns how many times the first number can be divided by the second number
+      div returns how many times the first number can be divided by the
+      second number
       div :: a -> a -> a
       Prelude> 6 div 2
       Prelude> 3
