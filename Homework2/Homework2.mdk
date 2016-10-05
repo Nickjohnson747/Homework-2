@@ -65,20 +65,35 @@ what the functions do.\
  - Integral defined by: quot, rem, div, mod, quotRem, divMod, toInteger
     - Invocations:
       - ```haskell
+      quot preforms integer division and discards the remainder
       quot :: a -> a -> a
       Prelude> 33 quot 12
       Prelude> 2
         ```
       - ```haskell
+      rem returns the remainder of the integer division preformed on the two input numbers
        rem :: a -> a -> a
        Prelude> 3 rem 12
        Prelude> 3
         ``` 
       - ``` haskell
+      div returns how many times the first number can be divided by the second number
       div :: a -> a -> a
       Prelude> 6 div 2
       Prelude> 3
         ```
+      - ``` haskell
+      mod preforms division on two integers and returns the remainder
+      mod :: a -> a -> a
+      Prelude> 33 mod -12
+      Prelude> -3
+        ```
+      - ``` haskell
+       quotRem returns a tuple in the form (result of division, remainder)
+       quotRem :: a -> Rational
+       Prelude> quotRem 22 8
+       Prelude> (2,6)
+      ```
 - What are the example types that are instances of `Real` and `Integral`,
   respectively. Try invoking the `Real` and `Integral` functions on
   values of the example types that you give.
